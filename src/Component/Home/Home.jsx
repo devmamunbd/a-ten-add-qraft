@@ -1,6 +1,8 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLoaderData } from "react-router-dom"
 
 const Home = () => {
+
+  const homeData = useLoaderData()
 
   return (
     <div className="mt-10 mb-10">
@@ -36,10 +38,12 @@ const Home = () => {
     </div>
 
     <div className="mt-10 mx-auto">
-      <h1 className="text-black font-bold text-3xl text-center">Craft Item Section</h1>
+      <h1 className="text-black font-bold text-3xl text-center">Craft Item Section: {homeData.length}</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-      <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    {
+      homeData.slice(0,6).map((data) => <div key={data._id}>
+          <div className="max-w-xs p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
       <img src="https://source.unsplash.com/random/300x300/?1" alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
       <div className="mt-6 mb-2">
         <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-600">Quisque</span>
@@ -52,6 +56,8 @@ const Home = () => {
         > <button className="w-full bg-black text-white font-bold rounded-md py-2">View Details</button></NavLink>
       </div>
     </div>
+      </div>
+    )}
       </div>
     </div>
 

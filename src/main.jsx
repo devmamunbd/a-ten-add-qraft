@@ -24,15 +24,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: ()=> fetch('http://localhost:5000/all')
       },
       {
         path: '/all',
-        element: <AllArt></AllArt>
+        element: <AllArt></AllArt>,
+        loader: ()=> fetch('http://localhost:5000/all')
       },
       {
         path: '/add',
-        element: <PrivateRoute><AddCraft></AddCraft></PrivateRoute> 
+        element: <PrivateRoute><AddCraft></AddCraft></PrivateRoute>,
+        
       },
       {
         path: '/my',
