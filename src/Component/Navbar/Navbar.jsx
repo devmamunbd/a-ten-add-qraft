@@ -1,19 +1,28 @@
+import { useContext } from "react"
 import { NavLink } from "react-router-dom"
+import { AuthContext } from "../AauthProvider/AuthProvider"
 
 const Navbar = () => {
 
+  const {logOut, user} = useContext(AuthContext)
+
     const navlink = <>
     <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/all'>All Art Craft</NavLink></li>
     <li><NavLink to='/add'>Add Craft</NavLink></li>
+    <li><NavLink to='/all'>All Art Craft</NavLink></li>
     <li><NavLink to='/my'>My Art Craft</NavLink></li>
     <li><NavLink to='/login'>Login</NavLink></li>
     <li><NavLink to='/register'>Register</NavLink></li>
     </>
 
+
+const handleLogOut=()=> {
+  logOut()
+}
+
   return (
     <div>
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 mt-6">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,7 +42,19 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    {
+      user ? 
+      <div className="flex gap-4 justify-between">
+        <div className="tooltip" data-tip={user?.displayName || "name not found"}>
+        <img className="w-12 h-12 rounded-full" src={user?.photoURL || "https://i.postimg.cc/nz1RzCYD/IMG-5456.jpg"} alt="" />
+        </div>
+      <NavLink onClick={handleLogOut} className="btn">Log Out</NavLink>
+      
+      </div>
+
+      :  <NavLink className="btn" to="/login">Login</NavLink>
+    }
+    
   </div>
 </div>
     </div>

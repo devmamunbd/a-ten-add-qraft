@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AauthProvider/AuthProvider";
@@ -6,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 const Register = () => {
-
+  const {user,setUser, updateUserProfile} = useContext(AuthContext)
   const [error, setError] = useState()
 
   const {createUser} = useContext(AuthContext)
@@ -33,10 +34,10 @@ if (password.length < 6) {
 
       createUser(email, password)
       .then(() => {
-        // updateUserProfile(name, photo)
-        // setUser((prevUser) => {
-        //   return {...prevUser, displayName:name, photoURL: photo}
-        // })
+        updateUserProfile(name, photo)
+        setUser((prevUser) => {
+          return {...prevUser, displayName:name, photoURL: photo}
+        })
         Swal.fire({
           position: "top-center",
           icon: "success",

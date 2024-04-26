@@ -11,6 +11,9 @@ import AllArt from './Component/AllArtAndCraft/AllArt.jsx'
 import AddCraft from './Component/AddCraftItem/AddCraft.jsx'
 import MyArt from './Component/MyArtAndCraft/MyArt.jsx'
 import Register from './Component/Register/Register.jsx'
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx'
+import ViewDetilas from './Component/ViewDetilas/ViewDetilas.jsx'
+import ViewAllDetails from './Component/ViewAllDetails/ViewAllDetails.jsx'
 
 
 const router = createBrowserRouter([
@@ -29,11 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/add',
-        element: <AddCraft></AddCraft>
+        element: <PrivateRoute><AddCraft></AddCraft></PrivateRoute> 
       },
       {
         path: '/my',
-        element: <MyArt></MyArt>
+        element: <PrivateRoute><MyArt></MyArt></PrivateRoute>
       }
       ,
       {
@@ -43,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/details/:id',
+        element: <PrivateRoute> <ViewDetilas></ViewDetilas></PrivateRoute>
+      },
+      {
+        path: '/detailsAll/:id',
+        element: <PrivateRoute> <ViewAllDetails></ViewAllDetails></PrivateRoute>
       }
     ]
   }
