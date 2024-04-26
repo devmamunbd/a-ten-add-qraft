@@ -2,15 +2,15 @@
 import { useContext, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { AuthContext } from "../AauthProvider/AuthProvider"
-import { Result } from "postcss"
 import Swal from "sweetalert2"
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
 
   const {singIn, googleSingIn, gitHubeSingIn} = useContext(AuthContext)
   const [error, setError] = useState()
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleLogin = event=> {
     event.preventDefault()
@@ -31,8 +31,10 @@ const Login = () => {
     })
     .catch(error => {
       console.log(error)
+      setError("Your Email and Password Dosen't Match")
     })
-    
+
+    setError("")
 
   }
 
@@ -70,8 +72,15 @@ const Login = () => {
              border-gray-700" type="email" name="email" placeholder="Email" /> <br />
 
 
-            <input className="p-2 w-[70%] rounded-md outline-none border-[1px]
-             border-gray-700" type="password" name="password" placeholder="PhotoURL" />
+            <input className="p-2 w-[70%] relative rounded-md outline-none border-[1px]
+             border-gray-700" 
+             type={showPassword ? "text" : "password" }
+             name="password" placeholder="Password" />
+             <small className="cursor-pointer absolute top-[302px] right-[470px]" onClick={()=>setShowPassword(!showPassword)}>
+              {
+                showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+              }
+             </small>
              <div>
               {
                 error && <span className="text-red-500">{error}</span>

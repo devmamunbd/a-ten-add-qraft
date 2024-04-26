@@ -1,5 +1,15 @@
 
 const MyArt = () => {
+
+
+  const hanbdelDelte =(id)=> {
+    fetch(`http://localhost:5000/all/${id}`, {
+      method: "DELETE"
+    })
+    .then()
+    .then()
+  }
+
   return (
     <div className="mt-10 mx-auto">
     <h1 className="text-black font-bold text-3xl text-center">My Art And Craft List</h1>
@@ -13,8 +23,12 @@ const MyArt = () => {
     </div>
     <p className="dark:text-gray-800">Mauris et lorem at elit tristique dignissim et ullamcorper elit. In sed feugiat mi. Etiam ut lacinia dui.</p>
     <div className="flex justify-between items-center mt-5">
-      <button className="px-7 py-2 bg-black text-white rounded-md">Upadte</button>
-      <button className="px-7 py-2 bg-black text-white rounded-md">Delete</button>
+      <button 
+      // onClick={hanbdelUpdate}
+      className="px-7 py-2 bg-black text-white rounded-md">Update</button>
+      <button 
+      onClick={()=>hanbdelDelte()}
+      className="px-7 py-2 bg-black text-white rounded-md">Delete</button>
     </div>
   </div>
     </div>

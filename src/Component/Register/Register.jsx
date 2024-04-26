@@ -3,12 +3,14 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../AauthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaGithub, FaGoogle, FaEyeSlash, FaEye } from "react-icons/fa";
 
 
 
 const Register = () => {
   const {user,setUser, updateUserProfile} = useContext(AuthContext)
   const [error, setError] = useState()
+  const [showPassword, setShowPassword] = useState(false)
 
   const {createUser} = useContext(AuthContext)
 
@@ -30,7 +32,6 @@ if (password.length < 6) {
         return setError("must have an Uppercase and Lowercase letter in the password")
       }
 
-      setError(" ")
 
       createUser(email, password)
       .then(() => {
@@ -51,6 +52,7 @@ if (password.length < 6) {
         console.log(error)
         setError(error.message)
       })
+      setError("")
      
 
   }
@@ -75,8 +77,15 @@ if (password.length < 6) {
                 <input className="p-2 w-[90%] rounded-md outline-none border-[1px]
                  border-gray-700" type="text" name="photo" placeholder="PhotoURL" /> <br />
 
-                <input className="p-2 w-[90%] rounded-md outline-none border-[1px]
-                 border-gray-700" type="password" name="password" placeholder="PhotoURL" />
+                <input className="p-2 w-[90%]  rounded-md outline-none border-[1px]
+                 border-gray-700" 
+                 type={showPassword ? "text" : "password"} 
+                 name="password" placeholder="Password" />
+                 <small className="cursor-pointer absolute bottom-[140px] right-[370px]" onClick={()=> setShowPassword(!showPassword)}>
+                  {
+                    showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                  }
+                 </small>
                  <div>
                   {
                     error && <span className="text-red-500">{error}</span>
