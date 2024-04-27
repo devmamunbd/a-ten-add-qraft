@@ -47,7 +47,7 @@ const Home = () => {
           <div className="w-[370px] h-[630px] p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
       <img src={data?.photo} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
       <div className="mt-6 mb-2">
-        <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-600">User Name: {data?.displayName}</span>
+        <span className="block text-xs font-medium tracking-widest dark:text-violet-600">{data?.displayName}</span>
         <h2 className="text-xl font-semibold tracking-wide">{data?.item}</h2>
       </div>
       <p className="dark:text-gray-800">{data?.short}</p>

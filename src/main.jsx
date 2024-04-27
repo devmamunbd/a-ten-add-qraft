@@ -13,6 +13,7 @@ import MyArt from './Component/MyArtAndCraft/MyArt.jsx'
 import Register from './Component/Register/Register.jsx'
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx'
 import ViewDetilas from './Component/ViewDetilas/ViewDetilas.jsx'
+import UpdatePage from './Component/UpdatePage/UpdatePage.jsx'
 // import ViewAllDetails from './Component/ViewAllDetails/ViewAllDetails.jsx'
 
 
@@ -53,12 +54,12 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element: <PrivateRoute> <ViewDetilas></ViewDetilas></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/${params.id}`)
+        loader: ({params})=> fetch(`http://localhost:5000/details/${params.id}`)
+      },
+      {
+        path: '/update/:id',
+        element: <UpdatePage></UpdatePage>
       }
-      // {
-      //   path: '/detailsAll/:id',
-      //   element: <PrivateRoute> <ViewAllDetails></ViewAllDetails></PrivateRoute>
-      // }
     ]
   }
 ])
