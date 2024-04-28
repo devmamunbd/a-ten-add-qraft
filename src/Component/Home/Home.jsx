@@ -1,5 +1,6 @@
-import { FaPaintBrush } from "react-icons/fa"
+import { FaPaintBrush, FaRegClock } from "react-icons/fa"
 import { GiLargePaintBrush } from "react-icons/gi"
+import { IoLocationOutline } from "react-icons/io5"
 import { MdAddCall } from "react-icons/md"
 import { PiPaintBrushHouseholdBold } from "react-icons/pi"
 import { NavLink, useLoaderData } from "react-router-dom"
@@ -126,24 +127,46 @@ const Home = () => {
       </div>
 
         <div className="">
-          <div className="flex flex-col justify-center md:flex-row lg:flex-row gap-10 mt-10 mb-10">
-            <div className="bg-white shadow-sm">
-              <div className="flex flex-col gap-4">
+          <h1 className="text-4xl text-center text-black font-bold mt-10">Contact Us</h1>
+          <div className="flex flex-col justify-center md:flex-row lg:flex-row mt-10 mb-10">
+            <div className="bg-white shadow-md p-8 w-[500px]">
+              <div className="flex flex-col gap-4 space-y-4">
                 <div>
                   <div className="flex gap-2 items-center">
-                  <MdAddCall />
+                  <MdAddCall  className="text-orange-500"/>
                   <h1>Call Us</h1>
                   </div>
                   +8801757484944
                 </div>
+                <div>
+                  <div className="flex gap-2 items-center">
+                  <IoLocationOutline  className="text-orange-500"/>
+                  <h1>Location</h1>
+                  </div>
+                  121 Rock Street, New York, USA
+                </div>
+                <div>
+                  <div className="flex gap-2 items-center">
+                  <FaRegClock  className="text-orange-500"/>
+                  <h1>Business Hour</h1>
+                  </div>
+                  Mon-Fri...10am-8pm <br />
+                  Sat-Sun....Closed
+                </div>
               </div>
             </div>
 
-            {/* form */}
-            <div>
+           
+            <div className="bg-gray-200 shadow-md p-8 w-[500px]">
               <div>
-
+                <h1 className="text-2xl text-center font-bold mb-3">CONTACT US</h1>
               </div>
+              <div className="space-y-2">
+                <input className="p-2 outline-none bg-white w-full" type="text" placeholder="Enter Your Name" /> <br />
+                <input className="p-2 outline-none bg-white w-full" type="email" placeholder="Enter Your Valid Email Adrress" /> <br />
+                <textarea  className="p-2 outline-none bg-white w-full" name="" id="" cols="30" rows="5" placeholder="Enter Your Message"></textarea>
+              </div>
+              <button type="submit" className="bg-orange-500 w-full py-2 text-white font-bold">Submit</button>
             </div>
           </div>
         </div>
