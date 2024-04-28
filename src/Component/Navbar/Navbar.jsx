@@ -51,7 +51,7 @@ const handleLogOut=()=> {
         {navlink}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Mountain</a>
+    <a className="btn btn-ghost text-xl">Painting <span className="text-green-500">Plus</span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
