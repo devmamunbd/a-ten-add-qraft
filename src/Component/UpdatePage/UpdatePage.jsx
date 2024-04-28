@@ -33,7 +33,7 @@ const UpdatePage = () => {
     const updateCraft = {displayName, email, photo, item, subcategory, short, price, ratting, example, time, stock}
     // console.log(updateCraft)
 
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://assignment-server-fawn.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json"

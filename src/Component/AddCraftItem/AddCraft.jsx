@@ -26,7 +26,7 @@ const AddCraft = () => {
     const addInfo = {displayName, email, photo, item, subcategory, short, price, ratting, example, time, stock}
     console.log(addInfo)
 
-    fetch('http://localhost:5000/add', {
+    fetch('https://assignment-server-fawn.vercel.app/add', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json'

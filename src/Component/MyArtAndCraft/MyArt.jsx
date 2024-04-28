@@ -13,7 +13,7 @@ const MyArt = () => {
   const [control, setControl] = useState(false)
 
   useEffect(()=> {
-      fetch(`http://localhost:5000/myCart/${user?.email}`)
+      fetch(`https://assignment-server-fawn.vercel.app/myCart/${user?.email}`)
       .then(res => res.json())
       .then((data) => {
         setItem(data)
@@ -29,14 +29,15 @@ const MyArt = () => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
-    }).then(() => {
-      fetch(`http://localhost:5000/my/${id}`, {
+    })
+    .then(() => {
+      fetch(`https://assignment-server-fawn.vercel.app/my/${id}`, {
         method: "DELETE"
         
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
         if(data.deletedCount >0) {
           Swal.fire({
             title: "Deleted!",

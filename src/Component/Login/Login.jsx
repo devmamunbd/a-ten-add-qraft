@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation, useNavigate } from "react-router-dom"
 import { AuthContext } from "../AauthProvider/AuthProvider"
 import Swal from "sweetalert2"
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
+
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const {singIn, googleSingIn, gitHubeSingIn} = useContext(AuthContext)
   const [error, setError] = useState()
@@ -41,7 +44,8 @@ const Login = () => {
   const handleGithub=()=> {
     gitHubeSingIn()
     .then(result => {
-      console.log(result.user)
+      // console.log(result.user)
+      navigate(location.state ? location.state : '/')
     })
     .catch(error => {
       console.log(error)
@@ -51,7 +55,8 @@ const Login = () => {
   const handleGoogle =()=> {
     googleSingIn()
     .then(result => {
-      console.log(result.user)
+      // console.log(result.user)
+      navigate(location.state ? location.state : '/')
     })
     .catch(error => {
       console.log(error)

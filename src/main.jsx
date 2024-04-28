@@ -26,12 +26,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/all')
+        loader: ()=> fetch('https://assignment-server-fawn.vercel.app/all')
       },
       {
         path: '/all',
         element: <AllArt></AllArt>,
-        loader: ()=> fetch('http://localhost:5000/all')
+        loader: ()=> fetch('https://assignment-server-fawn.vercel.app/all')
       },
       {
         path: '/add',
@@ -54,12 +54,12 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element: <PrivateRoute> <ViewDetilas></ViewDetilas></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/details/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-server-fawn.vercel.app/details/${params.id}`)
       },
       {
         path: '/update/:id',
         element: <UpdatePage></UpdatePage>,
-        loader: ({params})=> fetch(`http://localhost:5000/update/${params.id}`)
+        loader: ({params})=> fetch(`https://assignment-server-fawn.vercel.app/update/${params.id}`)
       }
     ]
   }

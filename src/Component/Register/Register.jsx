@@ -42,7 +42,7 @@ if (password.length < 6) {
         Swal.fire({
           position: "top-center",
           icon: "success",
-          title: "User Create Success",
+          title: "User Register Success",
           showConfirmButton: false,
           timer: 1500
         });
