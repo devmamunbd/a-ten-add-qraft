@@ -38,6 +38,11 @@ const MyArt = () => {
       .then(data => {
         console.log(data)
         if(data.deletedCount >0) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your Craft Item has been deleted.",
+            icon: "success"
+          });
             setControl(!control)
          }
       })

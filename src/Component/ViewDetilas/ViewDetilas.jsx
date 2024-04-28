@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom"
 
 const ViewDetilas = () => {
 
-	const {loadData} = useLoaderData()
+	const loadData = useLoaderData()
 	console.log(loadData)
 
   return (
@@ -21,10 +21,6 @@ const ViewDetilas = () => {
 	</div>
 	</section>
 		</div>
-
-	
-      
-   
   )
 }
 
