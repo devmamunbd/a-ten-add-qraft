@@ -44,8 +44,8 @@ const MyArt = () => {
             text: "Your Craft Item has been deleted.",
             icon: "success"
           });
-            setControl(!control)
-         }
+          setControl(!control)
+        }
       })
     });
     
