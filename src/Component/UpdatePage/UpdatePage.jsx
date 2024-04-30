@@ -56,9 +56,6 @@ const UpdatePage = () => {
   
   }
 
-//   useEffect(()=> {
-   
-// },[id])
 
  
 

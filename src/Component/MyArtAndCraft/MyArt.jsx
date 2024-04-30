@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../AauthProvider/AuthProvider"
@@ -10,6 +11,7 @@ const MyArt = () => {
   const {user} = useContext(AuthContext)
   // console.log(user)
   const [item, setItem] = useState([])
+  // const [sortItem, setSortItem] = useState([])
   // const [cart, setCart] = useState(it)
   const [control, setControl] = useState(false)
 
@@ -18,6 +20,7 @@ const MyArt = () => {
       .then(res => res.json())
       .then((data) => {
         setItem(data)
+        // setSortItem(data)
       })
   },[user, control])
 
@@ -52,12 +55,38 @@ const MyArt = () => {
     
   }
 
+
+  // useEffect(()=> {
+  //   const handleCraftFilter = filter => {
+  //     if (filter === "yes") {
+  //       setSortItem(item)
+  //     }
+  //     else if(filter === "no") {
+  //       const noCraft = item.filter(craft => craft.example === "no");
+  //       setSortItem(noCraft)
+  //     }
+  //   }
+  // },[item, sortItem])
+
+  
+
   return (
     <div className="mt-10 mx-auto">
       <Fade  cascade damping={0.3}>
-
     <h1 className="text-black font-bold text-3xl text-center mb-7">My Art And Craft List</h1>
       </Fade>
+
+      <div className="dropdown flex justify-center mb-8">
+      <div tabIndex={0} className="bg-black px-8 py-2 text-white rounded-md">Sort Craft</div>
+      <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
+      <select name="subcategory" className="bg-black px-12 py-2 text-white rounded-md outline-none ">
+        {/* <option disabled>Landscape Painting</option> */}
+        <option >yes</option>
+        <option >no</option>
+        
+      </select>
+      </ul>
+    </div>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {

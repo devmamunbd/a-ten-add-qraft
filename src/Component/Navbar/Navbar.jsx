@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { AuthContext } from "../AauthProvider/AuthProvider"
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
@@ -55,7 +55,10 @@ const handleLogOut=()=> {
         {navlink}
       </ul>
     </div>
-    <h1 className="btn btn-ghost text-2xl font-bold">Painting <span className="text-green-500">Plus</span></h1>
+    <Link to="/">
+    
+    <h1 className=" text-2xl font-bold">Painting <span className="text-green-500">Plus</span></h1>
+    </Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
