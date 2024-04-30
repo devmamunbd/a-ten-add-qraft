@@ -97,7 +97,7 @@ const AddCraft = () => {
         <option >Portrait Drawing</option>
         <option >Watercolour Painting</option>
         <option >Oil Paintings</option>
-        <option >Architectural Charcoal Drawing</option>
+        <option >Charcoal Sketching</option>
         <option >Cartoon Drawing</option>
       </select>
      
