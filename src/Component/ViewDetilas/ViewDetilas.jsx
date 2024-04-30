@@ -20,7 +20,7 @@ const ViewDetilas = () => {
 				<p><span className="font-bold">Description: </span>{short}</p>
 			<div className="flex gap-5">
 				<div>
-					<h2><span className="font-bold">Price: </span>{price}</h2>
+					<h2><span className="font-bold">Price: $</span>{price}</h2>
 				</div>
 				<div>
 					<h2><span className="font-bold">Ratting: </span>{ratting}</h2>

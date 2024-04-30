@@ -1,6 +1,8 @@
 import { FaPaintBrush, FaRegClock } from "react-icons/fa"
 import { GiLargePaintBrush } from "react-icons/gi"
 import { IoLocationOutline } from "react-icons/io5"
+import { Fade } from "react-awesome-reveal";
+
 import { MdAddCall } from "react-icons/md"
 import { PiPaintBrushHouseholdBold } from "react-icons/pi"
 import { NavLink, useLoaderData } from "react-router-dom"
@@ -19,8 +21,13 @@ const Home = () => {
     <img src="/painting2.jpg" className="w-full h-[500px] rounded-lg" />
     
     <div className="absolute left-28 bottom-44">
+    <Fade cascade damping={0.3}>
     <h1 className="text-4xl text-white font-bold">We Bring Your Home <br /> To Lovely Color</h1>
+    </Fade>
       <div className="flex gap-7 mt-5">
+      {/* <Fade>
+    <p>I will gently appear as I enter the viewport</p>
+      </Fade> */}
         <button className="bg-black text-white px-9 py-2 rounded-md">Read More</button>
         <button className="bg-black text-white px-7 py-2 rounded-md">Explore Now</button>
       </div>
@@ -40,7 +47,9 @@ const Home = () => {
 <img src="/painting1.jpg" className="w-full h-[500px] rounded-lg" />
 
 <div className="absolute left-28 bottom-44">
-<h1 className="text-4xl text-blue-800 font-bold">BEST ART <br />  PAINTER</h1>
+  <Fade cascade damping={0.3}>
+  <h1 className="text-4xl text-blue-800 font-bold">BEST ART <br />  PAINTER</h1>
+  </Fade>
   <div className="flex gap-7 mt-5">
     <button className="bg-blue-500 text-white px-9 py-2 rounded-md">Read More</button>
     <button className="bg-blue-500 text-white px-7 py-2 rounded-md">Explore Now</button>
@@ -60,7 +69,10 @@ const Home = () => {
 <img src="/painting3.jpg" className="w-full h-[500px] rounded-lg" />
 
 <div className="absolute left-28 bottom-44">
-<h1 className="text-4xl font-bold"><span className="text-green-500">Commercial</span> <br /> <span className="text-orange-500">& Residential Painting</span></h1>
+  <Fade cascade damping={0.3}>
+  <h1 className="text-4xl font-bold"><span className="text-green-500">Commercial</span> <br /> <span className="text-orange-500">& Residential Painting</span></h1>
+
+  </Fade>
   <div className="flex gap-7 mt-5">
     <button className="bg-blue-500 text-white px-9 py-2 rounded-md">Read More</button>
     <button className="bg-blue-500 text-white px-7 py-2 rounded-md">Explore Now</button>
@@ -79,7 +91,10 @@ const Home = () => {
     
 
     <div className="mt-10 mx-auto">
+      <Fade  cascade damping={0.3}>
+
       <h1 className="text-black font-bold text-3xl text-center mb-7">Craft Item Section</h1>
+      </Fade>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
     {
@@ -111,14 +126,20 @@ const Home = () => {
     </div>
 
     <div className="mt-10 mx-auto">
+      <Fade  cascade damping={0.3}>
+
       <h1 className="text-black font-bold text-3xl text-center">Art And Craft Category Section</h1>
+      </Fade>
     </div>
 
 
 
       <div>
         <div>
+          <Fade  cascade damping={0.3}>
+
           <h1 className="text-3xl text-black font-bold mb-7 mt-7 text-center">Our Service</h1>
+          </Fade>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-9">
             <div >
               <img className="rounded-md" src="/painImg.jpg" alt="" />
@@ -172,7 +193,10 @@ const Home = () => {
       </div>
 
         <div className="">
+          <Fade>
+
           <h1 className="text-4xl text-center text-black font-bold mt-10">Contact Us</h1>
+          </Fade>
           <div className="flex flex-col justify-center md:flex-row lg:flex-row mt-10 mb-10">
             <div className="bg-white shadow-md p-8 w-[500px]">
               <div className="flex flex-col gap-4 space-y-4">

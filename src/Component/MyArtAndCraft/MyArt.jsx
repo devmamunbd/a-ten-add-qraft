@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../AauthProvider/AuthProvider"
 import { NavLink } from "react-router-dom"
 import Swal from "sweetalert2"
+import { Fade } from "react-awesome-reveal"
 
 const MyArt = () => {
 
@@ -53,7 +54,10 @@ const MyArt = () => {
 
   return (
     <div className="mt-10 mx-auto">
+      <Fade  cascade damping={0.3}>
+
     <h1 className="text-black font-bold text-3xl text-center mb-7">My Art And Craft List</h1>
+      </Fade>
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
@@ -79,7 +83,6 @@ const MyArt = () => {
      to={`/update/${data._id}`}
      >
      <button 
-      // onClick={hanbdelUpdate}
       className="px-12 py-2 bg-black text-white rounded-md">Update</button>
      </NavLink>
       <button 

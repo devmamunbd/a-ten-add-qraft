@@ -3,6 +3,7 @@
 import { useContext } from "react";
 import { AuthContext } from './../AauthProvider/AuthProvider';
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 
 const AddCraft = () => {
 
@@ -52,7 +53,10 @@ const AddCraft = () => {
 
   return (
     <div className="bg-slate-200 shadow-lg w-[700px] mx-auto rounded-md">
+      <Fade  cascade damping={0.3}>
+
       <h1 className="text-2xl text-black font-bold text-center p-2">Add Craft Item</h1>
+      </Fade>
 
       <form
       onSubmit={handleAddCraft}
@@ -61,57 +65,73 @@ const AddCraft = () => {
      <div className="flex gap-4">
      <div>
         <label htmlFor="">User Name</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="name" id="" defaultValue={user?.displayName} readOnly/>
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="name" id="" defaultValue={user?.displayName} readOnly/>
       </div>
       <div>
         <label htmlFor="">User Email</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="email" id=""  defaultValue={user?.email} readOnly/>
-      </div>
-     </div>
-     <div className="flex gap-4">
-     <div>
-        <label htmlFor="">Image URL</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="photo" id="" placeholder="Image URL"/>
-      </div>
-      <div>
-        <label htmlFor="">Item Name</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="item" id="" placeholder="Item Name"/>
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="email" id=""  defaultValue={user?.email} readOnly/>
       </div>
      </div>
      <div className="flex gap-4 mt-2">
      <div>
-        <label htmlFor="">Sub Category Name</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="subcategory" id="" placeholder="Sub Category URL"/>
+        <label htmlFor="">Image URL</label> <br />
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="photo" id="" placeholder="Image URL"/>
+      </div>
+      <div>
+        <label htmlFor="">Item Name</label> <br />
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="item" id="" placeholder="Item Name"/>
+      </div>
+     </div>
+     <div className="flex items-center gap-4 ">
+     <div>
+        {/* <label htmlFor="">Sub Category Name</label> <br /> */}
+        {/* <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="subcategory" id="" placeholder="Sub Category"/> */}
+        <label className="form-control  w-[300px]">
+      <div className="label">
+        <span className="label-text">Sub Category</span>
+        {/* <span className="label-text-alt">Alt label</span> */}
+      </div>
+      <select name="subcategory" className="select select-bordered">
+        <option disabled selected>Select Sub Category</option>
+        <option >Landscape Painting</option>
+        <option >Portrait Drawing</option>
+        <option >Watercolour Painting</option>
+        <option >Oil Paintings</option>
+        <option >Architectural Charcoal Drawing</option>
+        <option >Cartoon Drawing</option>
+      </select>
+     
+    </label>
       </div>
       <div>
         <label htmlFor="">Short Description</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="short" id="" placeholder="Short Description"/>
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="short" id="" placeholder="Short Description"/>
       </div>
      </div>
      <div className="flex gap-4 mt-2">
      <div>
         <label htmlFor="">Price</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="price" id="" placeholder="Price"/>
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="price" id="" placeholder="Price"/>
       </div>
       <div>
         <label htmlFor="">Ratting</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="ratting" id="" placeholder="Ratting"/>
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="ratting" id="" placeholder="Ratting"/>
       </div>
      </div>
      <div className="flex gap-4 mt-2">
      <div>
         <label htmlFor="">Custimization Example</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="example" id="" placeholder="Customization Example"/>
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="example" id="" placeholder="Customization Example"/>
       </div>
       <div>
         <label htmlFor="">Processing Time</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="time" id="" placeholder="Processing Time"/>
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="time" id="" placeholder="Processing Time"/>
       </div>
      </div>
      <div className="flex items-start mt-2">
      <div>
         <label htmlFor="">Stock Status</label> <br />
-        <input className="outline-none rounded-md p-2 w-[300px]" type="text" name="stock" id="" placeholder="Customization Example"/>
+        <input className="outline-none rounded-md p-3 w-[300px]" type="text" name="stock" id="" placeholder="Stock Status"/>
       </div>
       {/* <div>
         <label htmlFor="">Processing Time</label> <br />

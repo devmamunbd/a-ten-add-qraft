@@ -8,4 +8,10 @@
 - If you need any service.  Then you can easily get the service by contacting us through the information or form.
 
 
+
+## Which NPM Package i am used for the challenge task.
+- React Tooltip
+- React Awesome Reveal
+
+
 ## Live Site: https://painting-plus.netlify.app/

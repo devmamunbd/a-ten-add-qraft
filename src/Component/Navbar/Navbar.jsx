@@ -1,6 +1,10 @@
 import { useContext, useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { AuthContext } from "../AauthProvider/AuthProvider"
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+
+
 
 const Navbar = () => {
 
@@ -63,9 +67,21 @@ const handleLogOut=()=> {
     {
       user ? 
       <div className="flex gap-4 justify-between">
-        <div className="tooltip" data-tip={user?.displayName || "name not found"}>
-        <img className="w-12 h-12 rounded-full" src={user?.photoURL || "https://i.postimg.cc/nz1RzCYD/IMG-5456.jpg"} alt="" />
-        </div>
+        {/* <div className="tooltip" data-tip={user?.displayName || "name not found"}> */}
+      
+        <a
+          data-tooltip-id="my-tooltip-inline"
+          data-tooltip-content={user?.displayName || "name not found"}
+        >
+        <img className="w-12 h-12 rounded-full cursor-pointer" src={user?.photoURL || "https://i.postimg.cc/nz1RzCYD/IMG-5456.jpg"} alt="" />
+        </a>
+        <Tooltip
+          id="my-tooltip-inline"
+          style={{ backgroundColor: "black", color: "#FFFF" }}
+        />
+  
+     
+        {/* </div> */}
       <NavLink onClick={handleLogOut} className="btn">Log Out</NavLink>
       
       </div>
@@ -74,6 +90,7 @@ const handleLogOut=()=> {
     }
     
   </div>
+ 
   <div className="ml-3">
   <label className="cursor-pointer grid place-items-center">
   <input
