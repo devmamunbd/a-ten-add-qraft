@@ -16,6 +16,9 @@
 
 ## Live Site: https://painting-plus.netlify.app/
 
+# Technology Used
+- HTML, CSS, Tailwind, JavaScript, React JS, Node.js, Express.JS, MongoDB
+
 # if you clone my GitHub project please follow this step
 - open your folder and terminal
 - git clone https://github.com/username/project-name.git
